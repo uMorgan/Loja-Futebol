@@ -6,23 +6,39 @@
   <title>Futebol Store</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="imagens/icone.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer>
+    function adicionarAoCarrinho() {
+      const contador = document.getElementById('carrinho-contador');
+      let total = parseInt(contador.textContent);
+      contador.textContent = total + 1;
+    }
+  </script>
 </head>
 <body>
   <header>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <nav>
-      <div class="logo">
-      <a href="index.html">
-        <img src="imagens/icone.ico" alt="Futebol Store Logo">
-      </a>
-      <h1>Futebol Store</h1>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="imagens/icone.ico" alt="Futebol Store Logo">
+          </a>
+          <h1>Futebol Store</h1>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <div class="carrinho">
+          <a href="carrinho.html" title="Ver Carrinho">
+            🛒 <span id="carrinho-contador">0</span>
+          </a>
+        </div>
       </div>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
     </nav>
   </header>
 
@@ -36,20 +52,24 @@
           <img src="imagens/camisa_brasil_2022.jpg" alt="Camisa Brasil 2022">
           <h4>Camisa Brasil 2022</h4>
           <p>R$ 249,90</p>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
         <div class="produto">
           <img src="imagens/camisa_real_madrid_2122.jpg" alt="Camisa Real Madrid 2021/22">
           <h4>Camisa Real Madrid 2021/22</h4>
           <p>R$ 299,90</p>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
         <div class="produto">
           <img src="imagens/camisa_flamengo_2022.jpg" alt="Camisa Flamengo 2022">
           <h4>Camisa Flamengo 2022</h4>
           <p>R$ 219,90</p>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
       </div>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Futebol Store. Todos os direitos reservados.</p>
   </footer>

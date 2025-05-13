@@ -6,180 +6,269 @@
   <title>Produtos | Futebol Store</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="imagens/icone.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script defer>
+    function adicionarAoCarrinho() {
+      const contador = document.getElementById('carrinho-contador');
+      let total = parseInt(contador.textContent);
+      contador.textContent = total + 1;
+    }
+    function filtrarProdutos() {
+    const categoriaSelecionada = document.getElementById('filtro').value;
+    const produtos = document.querySelectorAll('.produto');
+
+    produtos.forEach(produto => {
+      const categoria = produto.getAttribute('data-categoria');
+      if (categoriaSelecionada === 'todos' || categoria === categoriaSelecionada) {
+        produto.style.display = 'block';
+      } else {
+        produto.style.display = 'none';
+      }
+    });
+  }
+  </script>
 </head>
 <body>
   <header>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <div class="logo">
-      <a href="index.html">
-        <img src="imagens/icone.ico" alt="Futebol Store Logo">
-      </a>
-      <h1>Futebol Store</h1>
-    </div>
     <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="imagens/icone.ico" alt="Futebol Store Logo">
+          </a>
+          <h1>Futebol Store</h1>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <div class="carrinho">
+          <a href="carrinho.html" title="Ver Carrinho">
+            🛒 <span id="carrinho-contador">0</span>
+          </a>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main>
+    
     <section class="produtos-destaque">
       <h2>Camisas Disponíveis</h2>
+
+      <div class="filtro-categorias">
+        <label for="filtro">Filtrar por:</label>
+        <select id="filtro" onchange="filtrarProdutos()">
+          <option value="todos">Todos</option>
+          <option value="camisas">Camisas</option>
+          <option value="chuteiras">Chuteiras</option>
+        </select>
+      </div>
+
       <div class="produtos">
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_brasil_2022.jpg" alt="Camisa Brasil 2022">
           <h3>Camisa Brasil 2022</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_real_madrid_2122.jpg" alt="Camisa Real Madrid 2021/22">
           <h3>Camisa Real Madrid 2021/22</h3>
           <p>R$ 299,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_flamengo_2022.jpg" alt="Camisa Flamengo 2022">
           <h3>Camisa Flamengo 2022</h3>
           <p>R$ 219,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_flamengo_2022.jpg" alt="Camisa Sortida">
           <h3>Camisa Sortida</h3>
           <p>R$ 160,69</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_flamengo_2022.jpg" alt="2x Camisa Sortida">
           <h3>Duas camisas Sortidas</h3>
           <p>R$ 240,69</p>
-          <button>Adicionar ao Carrinho</button>   
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>   
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_barcelona.png" alt="Camisa Barcelona 2024">
           <h3>Camisa Barcelona 2024</h3>
           <p>R$ 240,69</p>
-          <button>Adicionar ao Carrinho</button>   
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>   
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_alemanha.PNG" alt="Camisa Alemanha 2024">
           <h3>Camisa Alemanha 2024</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_inter.png" alt="Camisa Inter 2025">
           <h3>Camisa Inter 2025</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_juventus.png" alt="Camisa Juventus">
           <h3>Camisa Juventus</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_bayern.PNG" alt="Camisa Bayern">
           <h3>Camisa Bayern de Munique</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_athletico.PNG" alt="Camisa Athletico">
           <h3>Camisa Athletico</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>  
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
             <img src="imagens/camisa_saopaulo.PNG" alt="Camisa São Paulo">
             <h3>Camisa São Paulo 2025</h3>
             <p>R$ 249,90</p>
-            <button>Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
             <img src="imagens/camisa_manchestercity.PNG" alt="Camisa Manchester City">
             <h3>Camisa Manchester City</h3>
             <p>R$ 249,90</p>
-            <button>Adicionar ao Carrinho</button>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_psg.PNG" alt="Camisa PSG">
           <h3>Camisa Paris-Saint-German</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
         </div>
-        <div class="produto">
+        <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_palmeiras.PNG" alt="Camisa Palmeiras">
           <h3>Camisa Palmeiras</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_gremio.PNG" alt="Camisa Gremio">
           <h3>Camisa Grêmio</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>    
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_intermiami.PNG" alt="Camisa Inter Miami">
           <h3>Camisa Inter Miami</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_corinthians.PNG" alt="Camisa Corinthians">
           <h3>Camisa Corinthians</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_atleticomg.PNG" alt="Camisa Atletico-MG">
           <h3>Camisa Atlético Mineiro</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_bvb.PNG" alt="Camisa Dortmund">
           <h3>Camisa Borussia Dortmund</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_liverpool.PNG" alt="Camisa Liverpool">
           <h3>Camisa Liverpool</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_santos.PNG" alt="Camisa Santos">
           <h3>Camisa Santos</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_botafogo.PNG" alt="Camisa Botafogo">
           <h3>Camisa Botafogo-RJ</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div> 
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_arsenal.jpg" alt="Camisa Arsenal">
           <h3>Camisa Arsenal</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
-         <div class="produto">
+         <div class="produto" data-categoria="camisas">
           <img src="imagens/camisa_chelsea.PNG" alt="Camisa Chelsea">
           <h3>Camisa Chelsea</h3>
           <p>R$ 249,90</p>
-          <button>Adicionar ao Carrinho</button>
+          <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
          </div>
+         <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Classica">
+            <h3>Chuteira Nike Mercurial Classica</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Laranja">
+            <h3>Chuteira Nike Mercurial Laranja</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Cinza">
+            <h3>Chuteira Nike Mercurial Cinza</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Branca">
+            <h3>Chuteira Nike Mercurial Branca</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Preta">
+            <h3>Chuteira Nike Mercurial Preta</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Verde">
+            <h3>Chuteira Nike Mercurial Verde</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Azul">
+            <h3>Chuteira Nike Mercurial Azul</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+          <div class="produto" data-categoria="chuteiras">
+            <img src="imagens/chuteira_nike.jpg" alt="Chuteira Nike Rosa">
+            <h3>Chuteira Nike Mercurial Rosa</h3>
+            <p>R$ 399,90</p>
+            <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
+          </div>
+
       </div>
     </section>
   </main>

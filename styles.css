@@ -285,3 +285,68 @@ h2.mensagem-enviada{
   font-size: 20px;
   margin-bottom: 10px;
 }
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links {
+  flex: 2;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.nav-links li a {
+  color: gold;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: gold;
+  color: #006400;
+  font-weight: 700;
+}
+
+.carrinho {
+  flex: 1;
+  text-align: right;
+}
+
+.carrinho a {
+  color: gold;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+#carrinho-contador {
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
