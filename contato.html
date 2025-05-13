@@ -18,7 +18,9 @@
   <header>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <div class="logo">
-      <img src="imagens/icone.ico" alt="Futebol Store Logo">
+      <a href="index.html">
+        <img src="imagens/icone.ico" alt="Futebol Store Logo">
+      </a>
       <h1>Futebol Store</h1>
     </div>
     <nav>
@@ -34,7 +36,7 @@
   <main>
     <section class="contato">
       <h2>Fale Conosco</h2>
-      <form action="enviar.php" method="post">
+      <form id="form-contato">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -47,10 +49,47 @@
         <button type="submit">Enviar</button>
       </form>
     </section>
+    <div id="mensagem-confirmacao" class="modal">
+      <div class="modal-conteudo">
+        <span class="fechar">&times;</span>
+        <h2 class="mensagem-enviada">Sua mensagem foi recebida!</h2>
+        <button id="botao-ok">OK</button>
+      </div>
+    </div>
+
   </main>
 
   <footer>
     <p>&copy; 2025 Futebol Store. Todos os direitos reservados.</p>
   </footer>
+
+  <<script>
+  const form = document.getElementById("form-contato");
+  const modal = document.getElementById("mensagem-confirmacao");
+  const botaoOk = document.getElementById("botao-ok");
+  const fechar = document.querySelector(".fechar");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    modal.style.display = "block";
+    form.reset();
+  });
+
+  botaoOk.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  fechar.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+
 </body>
 </html>

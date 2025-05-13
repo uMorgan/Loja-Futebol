@@ -1,8 +1,4 @@
-/* Fonte moderna: adicione no <head> do HTML:
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-*/
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -38,8 +34,8 @@ header {
 /* Logo + Título estilizado */
 .logo {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   gap: 12px;
   margin-bottom: 10px;
 }
@@ -62,15 +58,16 @@ header {
 /* Menu de navegação */
 nav {
   margin-top: 0;
-  background-color: #034e03;
+  background-color: #034e0300;
   padding: 14px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  
+  text-align: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   flex-wrap: wrap;
   gap: 24px;
 }
@@ -87,17 +84,17 @@ nav ul li a {
 
 nav ul li a:hover {
   background-color: gold;
-  color: #003d00;
+  color: #f6f6f600;
   font-weight: 700;
 }
 
 /* Banner */
 .banner {
-  background-image: url('imagens/banner.jpg');
-  background-size: cover;
+  background-image: url('imagens/banner.png');
+  background-size: flex;
   background-position: center;
   text-align: center;
-  padding: 60px 20px;
+  padding: 100px 20px;
   color: gold;
 }
 
@@ -246,4 +243,45 @@ footer {
   background-color: rgba(0, 100, 0, 0.5);
   text-align: left;
   padding:24px;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-conteudo {
+  background-color: #2f9304de;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  font-family: 'Poppins', sans-serif;
+}
+
+.fechar {
+  color: #bd0707;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover {
+  color: #000;
+}
+
+h2.mensagem-enviada{
+  color: gold;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
