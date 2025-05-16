@@ -29,6 +29,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+
 }
 
 /* Logo + Título estilizado */
@@ -349,4 +350,56 @@ h2.mensagem-enviada{
   position: absolute;
   top: -10px;
   right: -10px;
+}
+
+.depoimentos-container {
+  display: flex;
+  justify-content: center;  
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+}
+
+.depoimentos-coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;  
+}
+
+.depoimento {
+  background-color: #1e8d05;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 2px black;
+  max-width: 300px;
+  text-align: center;
+  border: 1px solid gold;
+  
+}
+
+.formulario {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.formulario button {
+  background-color: #1e8d05;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }

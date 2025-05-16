@@ -16,22 +16,30 @@
 </head>
 <body>
   <header>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <div class="logo">
-      <a href="index.html">
-        <img src="imagens/icone.ico" alt="Futebol Store Logo">
-      </a>
-      <h1>Futebol Store</h1>
-    </div>
-    <nav>
-      <ul>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imagens/icone.ico" alt="Futebol Store Logo">
+        </a>
+        <h1>Futebol Store</h1>
+      </div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="produtos.html">Produtos</a></li>
         <li><a href="sobre.html">Sobre Nós</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
-    </nav>
-  </header>
+
+      <div class="carrinho">
+        <a href="carrinho.html" title="Ver Carrinho">
+          🛒 <span id="carrinho-contador">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
 
   <main>
     <section class="contato">
@@ -89,7 +97,7 @@
   </div>
 </footer>
 
-  <<script>
+  <script>
   const form = document.getElementById("form-contato");
   const modal = document.getElementById("mensagem-confirmacao");
   const botaoOk = document.getElementById("botao-ok");
