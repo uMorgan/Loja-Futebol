@@ -5,10 +5,9 @@
   box-sizing: border-box;
 }
 
-/* Corpo com fundo e fonte moderna */
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: url('imagens/fundo.jpg');
+  background-image: url('imagens/fundo1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -20,7 +19,6 @@ body {
   font-size: 16px;
 }
 
-/* Cabeçalho */
 header {
   background-color: rgba(0, 100, 0, 0.95);
   color: gold;
@@ -32,7 +30,6 @@ header {
 
 }
 
-/* Logo + Título estilizado */
 .logo {
   display: flex;
   align-items: left;
@@ -56,7 +53,6 @@ header {
   letter-spacing: 1px;
 }
 
-/* Menu de navegação */
 nav {
   margin-top: 0;
   background-color: #034e0300;
@@ -89,7 +85,6 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
-/* Banner */
 .banner {
   background-image: url('imagens/banner.png');
   background-size: flex;
@@ -134,7 +129,7 @@ nav ul li a:hover {
 .produtos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* ou space-around, space-between */
+  justify-content: center;
   gap: 30px;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.08);
@@ -142,7 +137,7 @@ nav ul li a:hover {
 }
 
 .produto {
-  flex: 1 1 280px; /* flex-grow: 1, flex-shrink: 1, min width: 280px */
+  flex: 1 1 280px; 
   max-width: 300px;
   background: rgba(0, 100, 0, 0.9);
   border: 1px solid gold;
@@ -402,4 +397,34 @@ h2.mensagem-enviada{
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+filtro-categorias {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filtro-categorias label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.filtro-categorias select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: white;
+  cursor: pointer;
+}
+
+.filtro-categorias select:hover,
+.filtro-categorias select:focus {
+  border-color: #007bff;
 }
