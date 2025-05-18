@@ -117,6 +117,7 @@ nav ul li a:hover {
   color: gold;
   font-size: 28px;
   margin-bottom: 30px;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .produtos-destaque h3 {
@@ -124,6 +125,7 @@ nav ul li a:hover {
   color: gold;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: #1e8d058b;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .produtos {
@@ -190,6 +192,11 @@ button {
   cursor: pointer;
   margin-top: 10px;
   transition: background 0.3s;
+}
+
+.contato h2 {
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
 }
 
 button:hover {
@@ -379,6 +386,7 @@ h2.mensagem-enviada{
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .formulario input,
